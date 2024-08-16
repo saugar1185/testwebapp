@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta name="google-signin-client_id" content="172720085775-kv3od6pjqpo1hsdvf9dpnforjje5b8f3.apps.googleusercontent.com">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
+  <hi>Hello Saurabh</hi>
+    <div id="g_id_onload"
+             data-client_id="172720085775-kv3od6pjqpo1hsdvf9dpnforjje5b8f3.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse">
+    </div>
+    <div id="g_id_signin"></div>
 
+    <script>
+        function handleCredentialResponse(response) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            console.log(response);
+        }
+    </script>
+</body>
 </html>
